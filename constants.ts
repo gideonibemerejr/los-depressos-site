@@ -46,7 +46,7 @@ export const footer: Link[] = [
 	},
 ];
 
-const homeMeta: Metadata = {
+export const homeMeta: Metadata = {
 	title: "Los Depressos | Home",
 	description:
 		"Los Depressos Studios is a premier multimedia studio for world-class artists and creatives of all kinds",

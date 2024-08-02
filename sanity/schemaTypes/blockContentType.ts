@@ -63,7 +63,7 @@ export const blockContentType = defineType({
 		defineArrayMember({
 			type: "image",
 			icon: ImageIcon,
-			options: { hotspot: true },
+			options: { hotspot: true, metadata: ["lqip"] },
 			fields: [
 				{
 					name: "alt",
@@ -71,6 +71,12 @@ export const blockContentType = defineType({
 					title: "Alternative Text",
 				},
 			],
+		}),
+		defineArrayMember({
+			type: "imageGallery",
+		}),
+		defineArrayMember({
+			type: "videoEmbed",
 		}),
 	],
 });

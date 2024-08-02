@@ -1,14 +1,15 @@
+import { HOME_QUERYResult } from "@/sanity.types";
+import { sanityFetch } from "@/sanity/lib/client";
+import { HOME_QUERY } from "@/sanity/lib/queries";
 import { draftMode } from "next/headers";
 // import { getCachedClient } from "lib/sanity";
 
-export default function Home() {
-	const preview = draftMode().isEnabled
-		? { token: process.env.SANITY_API_READ_TOKEN }
-		: undefined;
+import { HomePage } from "../containers";
 
-	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24 bg-primaryGreen text-primaryOrange">
-			<div>Los Depressos</div>
-		</main>
-	);
+export default async function Home() {
+	const home = await sanityFetch<HOME_QUERYResult>({
+		query: HOME_QUERY,
+	});
+
+	return <HomePage home={home} />;
 }

@@ -4,7 +4,7 @@ import "server-only";
 
 import { draftMode } from "next/headers";
 import { createClient, type QueryOptions, type QueryParams } from "next-sanity";
-
+import type { SanityClient } from "@sanity/client";
 import { apiVersion, dataset, projectId } from "../env";
 import { token } from "./token";
 
@@ -15,9 +15,31 @@ export const client = createClient({
 	useCdn: true,
 	stega: {
 		enabled: process.env.NEXT_PUBLIC_VERCEL_ENV === "preview",
-		studioUrl: "/studio",
+		studioUrl: "/studio-admin",
 	},
 });
+
+export function getClient(preview?: { token?: string }): SanityClient {
+	const client = createClient({
+		projectId,
+		dataset,
+		apiVersion,
+		useCdn: true,
+		perspective: "published",
+	});
+	if (preview) {
+		if (!preview.token) {
+			throw new Error("You must provide a token to preview drafts");
+		}
+		return client.withConfig({
+			token: preview.token,
+			useCdn: false,
+			ignoreBrowserTokenWarning: true,
+			perspective: "previewDrafts",
+		});
+	}
+	return client;
+}
 
 export async function sanityFetch<QueryResponse>({
 	query,

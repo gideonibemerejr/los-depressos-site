@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useNextSanityImage, UseNextSanityImageProps } from "next-sanity-image";
-import { getClient } from "../../sanity/lib/client";
+import { getClient } from "../../sanity/lib/getClient";
 import { ImageLoader } from "next/image";
 
 function ImageComponent({ value }: { value: any }) {
@@ -13,7 +13,7 @@ function ImageComponent({ value }: { value: any }) {
 	return (
 		<div className="my-2">
 			<Image
-				className="w-full h-auto" 
+				className="w-full h-auto"
 				src={imageProps?.src}
 				width={imageProps?.width}
 				height={imageProps?.height}

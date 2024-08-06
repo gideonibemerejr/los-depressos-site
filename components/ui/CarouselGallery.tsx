@@ -2,9 +2,9 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import ImageComponent from "./Image";
-import { ImageGallery } from "@/sanity.types";
+import { SanityImage } from "@/typings";
 
-function CarouselComponent({ value: { images } }: { value: ImageGallery }) {
+function CarouselComponent({ value: { images } }: { value: any }) {
 	return (
 		<div className="mb-3">
 			<Carousel
@@ -15,8 +15,10 @@ function CarouselComponent({ value: { images } }: { value: ImageGallery }) {
 				showStatus={false}
 				showIndicators={false}
 			>
-				{images?.map((image) => (
-					<ImageComponent key={image._key} value={image} />
+				{images?.map((image: SanityImage) => (
+					<div key={image._key} className="max-h-[600px] overflow-hidden">
+						<ImageComponent value={image} />
+					</div>
 				))}
 			</Carousel>
 		</div>

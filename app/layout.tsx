@@ -1,9 +1,11 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 
+import Loading from "./loading";
+import { Header } from "@/components";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +22,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={`${inter.className} bg-primaryGreen`}>
 				{draftMode().isEnabled && (
 					<a
 						className="fixed right-0 bottom-0 bg-blue-500 text-white p-4 m-4"
@@ -29,7 +31,12 @@ export default function RootLayout({
 						Disable preview mode
 					</a>
 				)}
-				{children}
+				<Header />
+				<div className="mx-auto max-w-8xl pt-6">
+					{" "}
+					<Suspense fallback={<Loading />}>{children}</Suspense>
+				</div>
+
 				{draftMode().isEnabled && <VisualEditing />}
 			</body>
 		</html>

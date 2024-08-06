@@ -39,7 +39,7 @@ export const byline = defineType({
 			],
 		}),
 		defineField({
-			name: "Links",
+			name: "links",
 			type: "array",
 			of: [
 				{

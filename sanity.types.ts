@@ -499,9 +499,9 @@ export type HOME_QUERYResult = Array<{
     _key: string;
   } & ImageGallery)>;
 }>;
-// Variable: GEAR_LIST_CATEGORIES
+// Variable: GEAR_LIST_CATEGORIES_QUERY
 // Query: *[_type == "gearItemType"]
-export type GEAR_LIST_CATEGORIESResult = Array<{
+export type GEAR_LIST_CATEGORIES_QUERYResult = Array<{
   _id: string;
   _type: "gearItemType";
   _createdAt: string;

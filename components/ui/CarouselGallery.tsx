@@ -6,7 +6,7 @@ import { SanityImage } from "@/typings";
 
 function CarouselComponent({ value: { images } }: { value: any }) {
 	return (
-		<div className="mb-3">
+		<div className="">
 			<Carousel
 				infiniteLoop={true}
 				autoPlay={true}
@@ -16,7 +16,7 @@ function CarouselComponent({ value: { images } }: { value: any }) {
 				showIndicators={false}
 			>
 				{images?.map((image: SanityImage) => (
-					<div key={image._key} className="max-h-[600px] overflow-hidden">
+					<div key={image._key} className="max-h-[650px] overflow-hidden">
 						<ImageComponent value={image} />
 					</div>
 				))}

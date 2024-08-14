@@ -1,5 +1,5 @@
 ## Features List
-
+ npx sanity@latest typegen generate 
 Project Setup
 Home Page - [ ] Navbar - [ ] Logo - [ ] Navigation: Gear List, Studio, Services, About, Book Now - [ ] Carousel - [ ] Byline - [ ] Logo - [ ] Text - [ ] CTA - [ ] Links: Gallery, Gear List, Clients, Services - [ ] Gallery - [ ] Footer - [ ] Navigation - [ ] Social Links - [ ] Location/Contacts
 Gear List - [ ] Header - [ ] Collections Grid

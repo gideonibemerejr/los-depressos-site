@@ -13,7 +13,10 @@ const Navbar = ({
 	setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
 	return (
-		<nav className="flex items-center justify-between pr-6" aria-label="Global">
+		<nav
+			className="flex items-center justify-between lg:pr-6"
+			aria-label="Global"
+		>
 			<Link
 				href="/"
 				className="hover:underline hover:text-primaryOrange hover:decoration-primaryOrange   -m-1.5 p-1.5"

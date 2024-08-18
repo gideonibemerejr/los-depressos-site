@@ -501,16 +501,11 @@ export type HOME_QUERYResult = Array<{
   } & ImageGallery)>;
 }>;
 // Variable: GEAR_LIST_CATEGORIES_QUERY
-// Query: *[_type == "gearItemType"]
+// Query: *[_type == "gearItemType"]{  _id,  name,  icon,  slug}
 export type GEAR_LIST_CATEGORIES_QUERYResult = Array<{
   _id: string;
-  _type: "gearItemType";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  slug?: Slug;
-  icon?: {
+  name: string | null;
+  icon: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -521,19 +516,30 @@ export type GEAR_LIST_CATEGORIES_QUERYResult = Array<{
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
-  };
+  } | null;
+  slug: Slug | null;
 }>;
 // Variable: GEAR_LIST_DETAILS_QUERY
-// Query: *[_type == "gearList" && category->slug.current == $keyword]
+// Query: *[_type == "gearList" && category->slug.current == $keyword]{_id,name,category->{  name,  icon},serialNumber,slug,image,description}
 export type GEAR_LIST_DETAILS_QUERYResult = Array<{
   _id: string;
-  _type: "gearList";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  slug?: Slug;
-  description?: Array<({
+  name: string | null;
+  category: null;
+  serialNumber: string | null;
+  slug: Slug | null;
+  image: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  description: Array<({
     _key: string;
   } & ImageGallery) | ({
     _key: string;
@@ -566,38 +572,14 @@ export type GEAR_LIST_DETAILS_QUERYResult = Array<{
     alt?: string;
     _type: "image";
     _key: string;
-  }>;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  serialNumber?: string;
-  categories?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "gearItemType";
-  };
+  }> | null;
 }>;
 // Variable: GEAR_LIST_CATEGORY
-// Query: *[_type == "gearItemType" && slug.current == $keyword]
+// Query: *[_type == "gearItemType" && slug.current == $keyword]{  _id,  name,  icon}
 export type GEAR_LIST_CATEGORYResult = Array<{
   _id: string;
-  _type: "gearItemType";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  slug?: Slug;
-  icon?: {
+  name: string | null;
+  icon: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -608,6 +590,61 @@ export type GEAR_LIST_CATEGORYResult = Array<{
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
-  };
+  } | null;
+}>;
+// Variable: GEAR_LIST_FULL
+// Query: *[_type == "gearList"]{  _id,  name,  serialNumber,  description,  image,  "categorySlug": category->slug.current,  "slug": slug.current,  }
+export type GEAR_LIST_FULLResult = Array<{
+  _id: string;
+  name: string | null;
+  serialNumber: string | null;
+  description: Array<({
+    _key: string;
+  } & ImageGallery) | ({
+    _key: string;
+  } & VideoEmbed) | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  image: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  categorySlug: null;
+  slug: string | null;
 }>;
 

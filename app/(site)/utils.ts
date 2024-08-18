@@ -4,6 +4,7 @@ import {
 	GEAR_LIST_CATEGORIES_QUERYResult,
 	GEAR_LIST_CATEGORYResult,
 	GEAR_LIST_DETAILS_QUERYResult,
+	GEAR_LIST_FULLResult,
 } from "@/sanity.types";
 import {
 	GEAR_LIST_CATEGORIES_QUERY,
@@ -44,7 +45,7 @@ export const getGearListCategory = cache(async (slug: string) => {
 });
 
 export const getFullGearList = cache(async () => {
-	const fullGearList = await sanityFetch({
+	const fullGearList = await sanityFetch<GEAR_LIST_FULLResult>({
 		query: GEAR_LIST_FULL,
 	});
 

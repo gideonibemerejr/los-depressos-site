@@ -12,7 +12,7 @@ const GearListDetailPage = ({
 	gearCategory,
 	gearListDetail,
 }: {
-	gearCategory?: GEAR_LIST_CATEGORYResult;
+	gearCategory: GEAR_LIST_CATEGORYResult;
 	gearListDetail: GEAR_LIST_DETAILS_QUERYResult;
 }) => {
 	return (
@@ -35,11 +35,13 @@ const GearListDetailPage = ({
 					<p className="text-3xl">Full Gear List</p>
 				)}
 			</section>
-			<section className="flex flex-col gap-4 justify-center items-center mt-8">
-				{gearListDetail.map((item) => (
-					<GearListDetailItem key={item._id} item={item} />
-				))}
-			</section>
+			{gearListDetail && (
+				<section className="flex flex-col gap-4 justify-center items-center mt-8">
+					{gearListDetail.map((item) => (
+						<GearListDetailItem key={item._id} item={item} />
+					))}
+				</section>
+			)}
 		</div>
 	);
 };

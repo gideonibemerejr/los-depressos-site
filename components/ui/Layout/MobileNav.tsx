@@ -33,7 +33,7 @@ function MobileNav({
 					<Link
 						href="/"
 						onClick={() => setMobileMenuOpen(false)}
-						className="hover:underline hover:text-primaryOrange hover:decoration-primaryOrange -m-1.5 p-1.5"
+						className="hover:underline hover:underline-offset-8 hover:text-primaryOrange hover:decoration-primaryOrange -m-1.5 p-1.5"
 					>
 						<span className="sr-only">Los Depressos</span>
 						<Image
@@ -56,17 +56,17 @@ function MobileNav({
 				</div>
 				<div className="flex px-4 row-span-7 justify-center items-center">
 					<div className="-my-6 divide-y divide-gray-500/10">
-						<div className=" space-y-10 pb-6 flex flex-col justify-center items-center">
+						<div className=" space-y-16 pb-6 flex flex-col justify-center items-center">
 							{navigation.map((item) => (
 								<Link
 									key={item.label}
 									href={item.href}
 									onClick={() => setMobileMenuOpen(false)}
 									className={cn(
-										"-mx-3 block rounded-lg px-3 py-2 md:text-7xl text-5xl font-semibold leading-7 underline-offset-8 text-primaryOrange",
+										"-mx-3 block rounded-lg px-3 py-2 md:text-7xl text-5xl font-semibold leading-7 underline-offset-[1rem] text-primaryOrange",
 										currentRoute === item.href
-											? "underline text-primaryOrange decoration-primaryOrange  hover:text-black hover:decoration-black"
-											: "hover:underline hover:text-primaryOrange hover:decoration-primaryOrange"
+											? "underline underline-offset-[1rem] text-primaryOrange decoration-primaryOrange  hover:text-black hover:decoration-black"
+											: "hover:underline hover:underline-offset-[1rem] hover:text-primaryOrange hover:decoration-primaryOrange"
 									)}
 								>
 									{item.label}

@@ -80,7 +80,7 @@ const Byline = ({ text, callToAction, Links }: BylineProps) => {
 				</div>
 			</div>
 			<div className="flex md:flex-row flex-col justify-center items-center w-[100vw] lg:min-h-[30vw] md:min-h-[40vw] min-h-[40vw] bg-primaryOrange text-primaryGreen py-20 px-4">
-				<div className="flex md:flex-row flex-col justify-center items-center gap-32">
+				<div className="flex md:flex-row flex-col justify-center items-center md:gap-32 gap-16">
 					{" "}
 					{Links?.map((link) => renderLinks(link?.link, link?.text))}{" "}
 				</div>

@@ -8,7 +8,7 @@ const GearList = ({ gearList = [] }: { gearList: any }) => {
 	return (
 		<>
 			<div className="text-primaryOrange">
-				<div className="w-full h-[30vh] relative overflow-hidden ">
+				<div className="w-full h-[40vh] relative overflow-hidden ">
 					<Image
 						src={yamaha.src}
 						sizes="100vw"

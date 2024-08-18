@@ -18,8 +18,8 @@ const BylineLink = ({
 			key={text}
 			className="flex flex-col items-center justify-center text-center"
 		>
-			<div className="w-16 h-16 text-primaryCream mb-4">{icon}</div>
-			<p className="text-normal text-primaryCream mb-6">{description}</p>
+			<div className="w-20 h-20 text-primaryCream mb-4">{icon}</div>
+			<p className="text-lg text-primaryCream mb-6">{description}</p>
 			<Link href={link}>
 				<Button className="" variant="cream">
 					{text}

@@ -49,7 +49,7 @@ const Navbar = ({
 							currentRoute === item.href
 								? "underline text-primaryOrange decoration-primaryOrange  hover:text-black hover:decoration-black"
 								: "hover:underline hover:text-primaryOrange hover:decoration-primaryOrange"
-						} text-sm font-semibold leading-6 underline-offset-8 text-primaryOrange`}
+						} text-normal font-semibold leading-6 underline-offset-8 text-primaryOrange`}
 					>
 						{item.label}
 					</Link>

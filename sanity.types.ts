@@ -93,7 +93,7 @@ export type Byline = {
     text?: string;
     link?: string;
   };
-  Links?: Array<{
+  links?: Array<{
     text?: string;
     link?: string;
     _type: "page";
@@ -355,7 +355,7 @@ export type GearList = {
     _type: "image";
   };
   serialNumber?: string;
-  category?: {
+  categories?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -370,6 +370,7 @@ export type GearItemType = {
   _updatedAt: string;
   _rev: string;
   name?: string;
+  slug?: Slug;
   icon?: {
     asset?: {
       _ref: string;
@@ -508,6 +509,7 @@ export type GEAR_LIST_CATEGORIES_QUERYResult = Array<{
   _updatedAt: string;
   _rev: string;
   name?: string;
+  slug?: Slug;
   icon?: {
     asset?: {
       _ref: string;
@@ -521,3 +523,91 @@ export type GEAR_LIST_CATEGORIES_QUERYResult = Array<{
     _type: "image";
   };
 }>;
+// Variable: GEAR_LIST_DETAILS_QUERY
+// Query: *[_type == "gearList" && category->slug.current == $keyword]
+export type GEAR_LIST_DETAILS_QUERYResult = Array<{
+  _id: string;
+  _type: "gearList";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  slug?: Slug;
+  description?: Array<({
+    _key: string;
+  } & ImageGallery) | ({
+    _key: string;
+  } & VideoEmbed) | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  serialNumber?: string;
+  categories?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "gearItemType";
+  };
+}>;
+// Variable: GEAR_LIST_CATEGORY
+// Query: *[_type == "gearItemType" && slug.current == $keyword]
+export type GEAR_LIST_CATEGORYResult = Array<{
+  _id: string;
+  _type: "gearItemType";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  slug?: Slug;
+  icon?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+}>;
+

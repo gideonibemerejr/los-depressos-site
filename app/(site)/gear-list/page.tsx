@@ -1,12 +1,7 @@
-import { GEAR_LIST_CATEGORIES_QUERYResult } from "@/sanity.types";
-import { sanityFetch } from "@/sanity/lib/client";
-import { GEAR_LIST_CATEGORIES_QUERY } from "@/sanity/lib/queries";
-
 import { GearListPage } from "@/components";
+import { getGearList } from "../utils";
 
 export default async function GearList() {
-	const gearList = await sanityFetch<GEAR_LIST_CATEGORIES_QUERYResult>({
-		query: GEAR_LIST_CATEGORIES_QUERY,
-	});
+	const gearList = await getGearList();
 	return <GearListPage gearList={gearList} />;
 }

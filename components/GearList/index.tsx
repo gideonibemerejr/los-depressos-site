@@ -2,13 +2,18 @@
 import Image from "next/image";
 import yamaha from "@/public/images/yamaha2.jpg";
 import GearListItem from "./GearListItem";
-import { GearItemType } from "@/sanity.types";
+import { GEAR_LIST_CATEGORIES_QUERYResult, GearItemType } from "@/sanity.types";
+import Link from "next/link";
 
-const GearList = ({ gearList = [] }: { gearList: any }) => {
+const GearList = ({
+	gearList = [],
+}: {
+	gearList: GEAR_LIST_CATEGORIES_QUERYResult;
+}) => {
 	return (
 		<>
 			<div className="text-primaryOrange">
-				<div className="w-full h-[40vh] relative overflow-hidden ">
+				<div className="w-full h-[30vh] md:h-[40vh] relative overflow-hidden ">
 					<Image
 						src={yamaha.src}
 						sizes="100vw"
@@ -22,8 +27,13 @@ const GearList = ({ gearList = [] }: { gearList: any }) => {
 					</div>
 				</div>
 				{/* subtitle */}
-				<div className="w-full flex flex-col justify-center items-center my-6 text-xl lg:text-3xl">
-					Explore Our Collections
+				<div className="w-full flex flex-col justify-center items-center mt-6 md:my-12">
+					<p className="text-xl lg:text-3xl">Explore Our Collections</p>
+					<Link href="/gear-list/all">
+						<p className="text-primaryOrange hover:underline underline-offset-[.35rem] mt-4 text-xl">
+							View All
+						</p>
+					</Link>
 				</div>
 				{/* grid */}
 				<ul className="flex flex-wrap gap-16 justify-center items-center py-12">
@@ -31,7 +41,6 @@ const GearList = ({ gearList = [] }: { gearList: any }) => {
 						<GearListItem key={item._id} {...item} />
 					))}
 				</ul>
-				<pre>{JSON.stringify(gearList, null, 2)}</pre>
 			</div>
 		</>
 	);

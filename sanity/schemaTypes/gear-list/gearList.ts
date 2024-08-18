@@ -42,7 +42,7 @@ export default defineType({
 			type: "string",
 		}),
 		defineField({
-			name: "category",
+			name: "categories",
 			type: "reference",
 			to: [{ type: "gearItemType" }],
 		}),

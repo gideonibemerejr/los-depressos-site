@@ -467,7 +467,7 @@
           },
           "optional": true
         },
-        "Links": {
+        "links": {
           "type": "objectAttribute",
           "value": {
             "type": "array",
@@ -2388,7 +2388,7 @@
         },
         "optional": true
       },
-      "category": {
+      "categories": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2459,6 +2459,14 @@
         "type": "objectAttribute",
         "value": {
           "type": "string"
+        },
+        "optional": true
+      },
+      "slug": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "slug"
         },
         "optional": true
       },

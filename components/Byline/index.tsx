@@ -9,7 +9,7 @@ import Instruments from "../Icons/Instruments";
 import Clients from "../Icons/Clients";
 import Other from "../Icons/Other";
 
-const Byline = ({ text, callToAction, Links }: BylineProps) => {
+const Byline = ({ text, callToAction, links }: BylineProps) => {
 	const renderLinks = (link: string | undefined, text: string | undefined) => {
 		switch (link) {
 			case "/studio":
@@ -82,7 +82,7 @@ const Byline = ({ text, callToAction, Links }: BylineProps) => {
 			<div className="flex md:flex-row flex-col justify-center items-center w-[100vw] lg:min-h-[30vw] md:min-h-[40vw] min-h-[40vw] bg-primaryOrange text-primaryGreen py-20 px-4">
 				<div className="flex md:flex-row flex-col justify-center items-center md:gap-32 gap-16">
 					{" "}
-					{Links?.map((link) => renderLinks(link?.link, link?.text))}{" "}
+					{links?.map((link) => renderLinks(link?.link, link?.text))}{" "}
 				</div>
 			</div>
 		</div>

@@ -37,7 +37,7 @@ const GearList = ({
 				</div>
 				{/* grid */}
 				<ul className="flex flex-wrap gap-16 justify-center items-center py-12">
-					{gearList.map((item: GearItemType) => (
+					{gearList.map((item) => (
 						<GearListItem key={item._id} {...item} />
 					))}
 				</ul>

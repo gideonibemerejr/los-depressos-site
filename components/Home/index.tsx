@@ -17,7 +17,7 @@ const Home = ({ home = [] }: { home: any }) => {
 					logo={byline.logo}
 					text={byline.text}
 					callToAction={byline.callToAction}
-					Links={byline.Links}
+					links={byline.links}
 					_type={byline._type}
 				/>
 				<GridGallery value={gallery} />

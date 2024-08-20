@@ -4,7 +4,7 @@ import ImageComponent from "@/components/ui/Image";
 import { cn } from "@/lib/utils";
 import { GearItemType } from "@/sanity.types";
 
-const GearListItem = ({ name, icon, slug }: GearItemType) => {
+const GearListItem = ({ name, icon, slug }: any) => {
 	return (
 		<li className="flex flex-col justify-center items-center md:w-[25%] w-[100%]">
 			<div

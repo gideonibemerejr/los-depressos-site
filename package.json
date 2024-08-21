@@ -36,6 +36,7 @@
     "react-player": "^2.16.0",
     "react-responsive-carousel": "^3.2.23",
     "sanity": "^3.52.2",
+    "sharp": "^0.33.5",
     "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0"
   },

@@ -11,7 +11,8 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
+      "pre-commit": "tsc --noEmit && lint-staged"
     }
   },
   "lint-staged": {
@@ -36,6 +37,7 @@
     "react-player": "^2.16.0",
     "react-responsive-carousel": "^3.2.23",
     "sanity": "^3.52.2",
+    "sharp": "^0.33.5",
     "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0"
   },

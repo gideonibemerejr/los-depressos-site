@@ -10,19 +10,23 @@ import { aboutType } from "./schemaTypes/home/about";
 import { videoEmbedType } from "./schemaTypes/videoEmbed";
 import { byline } from "./schemaTypes/home/byline";
 import { linkType } from "./schemaTypes/linkType";
+import about from "./schemaTypes/about";
+import service from "./schemaTypes/serviceType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-	types: [
-		blockContentType,
-		gearList,
-		gearItemType,
-		homeType,
-		servicesType,
-		mediaType,
-		aboutType,
-		imageGalleryType,
-		videoEmbedType,
-		byline,
-		linkType,
-	],
+  types: [
+    blockContentType,
+    gearList,
+    gearItemType,
+    homeType,
+    servicesType,
+    mediaType,
+    aboutType,
+    imageGalleryType,
+    videoEmbedType,
+    byline,
+    linkType,
+    about,
+    service,
+  ],
 };

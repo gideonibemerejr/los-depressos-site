@@ -3,9 +3,9 @@ import { cache } from "react";
 import {
   ABOUT_QUERYResult,
   GEAR_LIST_CATEGORIES_QUERYResult,
-  GEAR_LIST_CATEGORYResult,
+  GEAR_LIST_CATEGORY_QUERYResult,
   GEAR_LIST_DETAILS_QUERYResult,
-  GEAR_LIST_FULLResult,
+  GEAR_LIST_FULL_QUERYResult,
   HOME_QUERYResult,
 } from "@/sanity.types";
 import {
@@ -38,7 +38,7 @@ export const getGearListDetail = cache(async (slug: string) => {
 });
 
 export const getGearListCategory = cache(async (slug: string) => {
-  const gearCategory = await sanityFetch<GEAR_LIST_CATEGORYResult>({
+  const gearCategory = await sanityFetch<GEAR_LIST_CATEGORY_QUERYResult>({
     query: GEAR_LIST_CATEGORY_QUERY,
     params: {
       keyword: slug,
@@ -49,7 +49,7 @@ export const getGearListCategory = cache(async (slug: string) => {
 });
 
 export const getFullGearList = cache(async () => {
-  const fullGearList = await sanityFetch<GEAR_LIST_FULLResult>({
+  const fullGearList = await sanityFetch<GEAR_LIST_FULL_QUERYResult>({
     query: GEAR_LIST_FULL_QUERY,
   });
 

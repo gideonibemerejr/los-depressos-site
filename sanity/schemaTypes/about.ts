@@ -11,9 +11,44 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "description",
-      title: "Description",
+      name: "lineOne",
+      title: "First Line",
       type: "blockContent",
+    }),
+    defineField({
+      name: "imageOne",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
+    }),
+    defineField({
+      name: "lineTwo",
+      title: "Second Line",
+      type: "blockContent",
+    }),
+    defineField({
+      name: "imageTwo",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
     }),
   ],
 });

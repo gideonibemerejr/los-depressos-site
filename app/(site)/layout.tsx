@@ -5,7 +5,7 @@ import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 
 import Loading from "./loading";
-import { Header } from "@/components";
+import { Header, Footer } from "@/components";
 import { homeMeta } from "@/constants";
 
 import "../../styles/globals.css";
@@ -39,6 +39,7 @@ export default function RootLayout({
         </div>
 
         {draftMode().isEnabled && <VisualEditing />}
+        <Footer />
       </body>
     </html>
   );

@@ -2,12 +2,16 @@
 import Byline from "@/components/Byline";
 import CarouselComponent from "@/components/ui/CarouselGallery";
 import GridGallery from "@/components/ui/GridGallery";
-import { Byline as BylineType, ImageGallery } from "@/sanity.types";
+import {
+  Byline as BylineType,
+  Home as HomeType,
+  ImageGallery,
+} from "@/sanity.types";
 
-const Home = ({ home = [] }: { home: any }) => {
-  const carousel: ImageGallery = home?.[0]?.pageBuilder?.[0];
-  const byline: BylineType = home?.[0]?.pageBuilder?.[1];
-  const gallery: ImageGallery = home?.[0]?.pageBuilder?.[2];
+const Home = ({ home }: { home: HomeType }) => {
+  const carousel: ImageGallery = home?.pageBuilder?.[0] as ImageGallery;
+  const byline: BylineType = home?.pageBuilder?.[1] as BylineType;
+  const gallery: ImageGallery = home?.pageBuilder?.[2] as ImageGallery;
 
   return (
     <>

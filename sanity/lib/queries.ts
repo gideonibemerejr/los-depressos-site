@@ -22,13 +22,13 @@ image,
 description
 }`;
 
-export const GEAR_LIST_CATEGORY = groq`*[_type == "gearItemType" && slug.current == $keyword]{
+export const GEAR_LIST_CATEGORY_QUERY = groq`*[_type == "gearItemType" && slug.current == $keyword]{
   _id,
   name,
   icon
 }`;
 
-export const GEAR_LIST_FULL = groq`*[_type == "gearList"]{
+export const GEAR_LIST_FULL_QUERY = groq`*[_type == "gearList"]{
   _id,
   name,
   serialNumber,
@@ -37,3 +37,5 @@ export const GEAR_LIST_FULL = groq`*[_type == "gearList"]{
   "categorySlug": category->slug.current,
   "slug": slug.current,  
 }`;
+
+export const ABOUT_QUERY = groq`*[_type == "aboutPage"]`;

@@ -1,7 +1,9 @@
-import React from "react";
+import { AboutPage } from "@/components";
+import { getAbout } from "../utils";
 
 const About = async () => {
-  return <div>About</div>;
+  const about = await getAbout();
+  return <AboutPage about={about} />;
 };
 
 export default About;

@@ -43,7 +43,7 @@ const Navbar = ({
       <div className="hidden lg:ml-12 lg:flex lg:gap-x-14 lg:items-center">
         {navigation.map((item) => (
           <Link
-            key={item.label}
+            key={item.href}
             href={item.href}
             className={`${
               currentRoute === item.href

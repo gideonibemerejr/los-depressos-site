@@ -6,7 +6,7 @@ import GridGallery from "./GridGallery";
 import CarouselGallery from "./CarouselGallery";
 import VideoPlayer from "./VideoPlayer";
 
-const components = (overrides) => ({
+const components = {
   types: {
     image: ({ value }: any) => <ImageComponent value={value} />,
     imageGallery: ({ value }: any) => {
@@ -65,8 +65,8 @@ const components = (overrides) => ({
       );
     },
   },
-});
+};
 
-export default function BlockContent({ value, overrides }: any) {
-  return <PortableText value={value} components={components(overrides)} />;
+export default function BlockContent({ value }: any) {
+  return <PortableText value={value} components={components} />;
 }

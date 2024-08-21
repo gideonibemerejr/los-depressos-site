@@ -1,22 +1,19 @@
 import { defineField, defineType } from "sanity";
 
-export const servicesType = defineType({
-  name: "services",
+export default defineType({
+  name: "aboutPage",
+  title: "About Page",
   type: "document",
-  title: "Services",
   fields: [
     defineField({
       name: "title",
+      title: "Title",
       type: "string",
     }),
     defineField({
       name: "description",
+      title: "Description",
       type: "blockContent",
-    }),
-    defineField({
-      name: "services",
-      type: "array",
-      of: [{ type: "service" }],
     }),
   ],
 });

@@ -1,9 +1,9 @@
 import { defineField, defineType } from "sanity";
 
-export const servicesType = defineType({
-  name: "services",
+export const galleryType = defineType({
+  name: "gallery",
   type: "document",
-  title: "Services",
+  title: "Gallery",
   fields: [
     defineField({
       name: "title",
@@ -14,9 +14,9 @@ export const servicesType = defineType({
       type: "blockContent",
     }),
     defineField({
-      name: "services",
+      name: "images",
       type: "array",
-      of: [{ type: "service" }],
+      of: [{ type: "image" }],
     }),
   ],
 });

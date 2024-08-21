@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Link } from "./typings";
+import { Link } from "./typings.d";
 
 export const navigation: Link[] = [
   {
@@ -49,11 +49,11 @@ export const footer: Link[] = [
 ];
 
 export const homeMeta: Metadata = {
-  title: "Los Depressos | Home",
+  title: "Home | Los Depressos",
   description:
     "Los Depressos Studios is a premier multimedia studio for world-class artists and creatives of all kinds",
   openGraph: {
-    title: "Los Depressos | Home",
+    title: "Home | Los Depressos",
     description:
       "Los Depressos Studios is a premier multimedia studio for world-class artists and creatives of all kinds",
     url: "https://losdepressos.com",
@@ -63,12 +63,12 @@ export const homeMeta: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Los Depressos | Home",
+    title: "Home | Los Depressos",
     description:
       "Los Depressos Studios is a premier multimedia studio for world-class artists and creatives of all kinds",
     images: {
       url: "https://losdepressos.com/",
-      alt: "Los Depressos | Home",
+      alt: "Home | Los Depressos",
     },
   },
 };
